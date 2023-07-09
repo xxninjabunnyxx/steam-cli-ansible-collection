@@ -24,7 +24,11 @@ jobs:
       - name: Build collection
         run: ansible-galaxy collection build
 
+      - name: Find collection artifact
+        id: find_artifact
+        run: echo "::set-output name=path::$(find . -name 'steam_cli_*.tar.gz')"
+
       - name: Publish collection
         env:
           GALAXY_API_TOKEN: ${{ secrets.GALAXY_API_TOKEN }}
-        run: ansible-galaxy collection publish --token $GALAXY_API_TOKEN xxninjabunnyxx/steam_cli_*.tar.gz
+        run: ansible-galaxy collection publish --token $GALAXY_API_TOKEN ${{ steps.find_artifact.outputs.path }}

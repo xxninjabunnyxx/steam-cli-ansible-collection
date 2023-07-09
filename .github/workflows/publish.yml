@@ -21,7 +21,10 @@ jobs:
       - name: Install dependencies
         run: pip3 install ansible-core
 
+      - name: Build collection
+        run: ansible-galaxy collection build
+
       - name: Publish collection
         env:
           GALAXY_API_TOKEN: ${{ secrets.GALAXY_API_TOKEN }}
-        run: ansible-galaxy collection publish --token $GALAXY_API_TOKEN xxninjabunnyxx/steam_cli_${{ github.sha }}.tar.gz
+        run: ansible-galaxy collection publish --token $GALAXY_API_TOKEN xxninjabunnyxx/steam_cli_*.tar.gz

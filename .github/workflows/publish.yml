@@ -1,0 +1,27 @@
+---
+name: Publish to Ansible Galaxy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      
+      - name: Install dependencies
+        run: pip3 install ansible-core
+
+      - name: Publish collection
+        env:
+          GALAXY_API_TOKEN: ${{ secrets.GALAXY_API_TOKEN }}
+        run: ansible-galaxy collection publish --token $GALAXY_API_TOKEN xxninjabunnyxx/steam_cli_${{ github.sha }}.tar.gz

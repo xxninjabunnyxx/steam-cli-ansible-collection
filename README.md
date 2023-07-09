@@ -68,7 +68,7 @@ The Steam CLI collection provides a single task `windows` with the following opt
         present: true
 ```
 
-This playbook demonstrates how to use the `windows` task to install two Steam applications, "Blue Revolver" and "DoDonPachi Resurrection", on Windows hosts. The `steam_path` variable specifies the directory where the Steam CLI tool is located.
+This playbook demonstrates how to use the `windows` task to install two Steam applications, "Blue Revolver" and "DoDonPachi Resurrection", on Windows hosts. The `steam_path` variable specifies the directory where the Steam is located.
 
 ### License
 
@@ -76,7 +76,7 @@ This Ansible collection is licensed under the [MIT License](https://opensource.o
 
 ### Support
 
-For any issues or questions regarding this Ansible collection, please open an issue on the [GitHub repository](https://github.com/your-repo/steam-cli-collection).
+For any issues or questions regarding this Ansible collection, please open an issue on the [GitHub repository](https://github.com/xxninjabunnyxx/steam-cli-ansible-collection/issues).
 
 ### Author
 

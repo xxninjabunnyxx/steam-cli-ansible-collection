@@ -5,13 +5,13 @@
     steam_path: "C:\\Program Files (x86)\\Steam\\steamcmd.exe"
   tasks:
     - name: Install Windows Verison of Blue Revolver
-      steam_cli:
+      steam:
         id: 439490
         directory: "{{ steam_path }}"
         present: true
 
     - name: Install Windows Verison of DoDonPachi Resurrection
-      steam_cli:
+      steam:
         id: 464450
         directory: "{{ steam_path }}"
         present: false

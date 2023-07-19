@@ -56,19 +56,19 @@ The Steam CLI collection provides a single task `windows` with the following opt
     steam_path: "C:\\Program Files (x86)\\Steam\\steamcmd.exe"
   tasks:
     - name: Install Windows Version of Blue Revolver
-      windows:
+      steam:
         id: 439490
         directory: "{{ steam_path }}"
         present: true
 
     - name: Install Windows Version of DoDonPachi Resurrection
-      windows:
+      steam:
         id: 464450
         directory: "{{ steam_path }}"
         present: true
 ```
 
-This playbook demonstrates how to use the `windows` task to install two Steam applications, "Blue Revolver" and "DoDonPachi Resurrection", on Windows hosts. The `steam_path` variable specifies the directory where the Steam is located.
+This playbook demonstrates how to use the `steam` task to install two Steam applications, "Blue Revolver" and "DoDonPachi Resurrection", on Windows hosts. The `steam_path` variable specifies the directory where the Steam is located.
 
 ### License
 
